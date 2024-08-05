@@ -1,0 +1,1 @@
+ml64 ./Unpacker_Stubloader.asm /link /SUBSYSTEM:CONSOLE /ENTRY:Main Function_to_export.obj lzo1z_d1.obj memset.obj memcpy.obj

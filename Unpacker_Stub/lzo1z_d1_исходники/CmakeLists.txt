@@ -1,0 +1,13 @@
+cmake_minimum_required(VERSION 3.12)
+project(lzo_example)
+
+
+#set(CMAKE_CXX_FLAGS "/O1 /Os /EHs-c- /GS- /MANIFEST:NO /DEBUG:NO")
+set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} /SUBSYSTEM:CONSOLE /ENTRY:lzo1z_decompress")
+add_executable(lzo_example ./lzo-2.10/src/lzo1z_d1.c)
+#target_compile_options(lzo_example PRIVATE "/O1")  # оптимизация по размеру
+target_compile_options(lzo_example PRIVATE "/Os")  # оптимизация по размеру
+target_compile_options(lzo_example PRIVATE "$<$<CXX_COMPILER_ID:MSVC>:/EHs-c->")
+target_compile_options(lzo_example PRIVATE "/GS-")       # отключение проверки буферов
+target_compile_options(lzo_example PRIVATE "/DEBUG:NO")  # Отключить генерацию отладочной информации
+#target_compile_options(lzo_example PRIVATE "/MANIFEST:NO")  # Отключить генерацию отладочной информации

@@ -1,0 +1,1 @@
+ml64 ./decryptor.asm /link /SUBSYSTEM:CONSOLE /ENTRY:Main Function_on_export.obj for_exit.obj
